@@ -1,0 +1,12 @@
+actor: ApiTester
+modules:
+    enabled:
+        - REST:
+            url: &url 'http://3.145.97.83:3333/'
+            depends: PhpBrowser
+        - \Tests\Support\Helper\DataHelper
+    config:
+        PhpBrowser: 
+            url: *url
+            headers:
+                Content-Type: application/json
